@@ -1,4 +1,4 @@
-teamcity_server CHANGELOG
+teamcity CHANGELOG
 =========================
 
 This file is used to list changes made in each version of the teamcity_server cookbook.

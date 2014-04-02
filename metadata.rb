@@ -1,4 +1,4 @@
-name             'teamcity-server'
+name             'teamcity'
 maintainer       'Michael Nikitochkin'
 maintainer_email 'michael@jetthoughts.com'
 license          'Apache 2.0'
