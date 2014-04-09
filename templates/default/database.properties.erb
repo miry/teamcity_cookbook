@@ -8,12 +8,12 @@
 
 # Database: PostgreSQL
 
-connectionUrl=<%= default['teamcity']['server']['jdbc']['url'] %>
-connectionProperties.user=<%= default['teamcity']['server']['jdbc']['user'] %>
-connectionProperties.password=<%= default['teamcity']['server']['jdbc']['password'] %>
+connectionUrl=<%= node['teamcity']['server']['jdbc']['url'] %>
+connectionProperties.user=<%= node['teamcity']['server']['jdbc']['user'] %>
+connectionProperties.password=<%= node['teamcity']['server']['jdbc']['password'] %>
 
 # The maximum number of connections TeamCity can open on database server.
-maxConnections=50
+maxConnections=<%= node['teamcity']['server']['jdbc']['max_connections'] %>
 
 # Specifies whether TeamCity should check each jdbc connection before use.
 # It reduces the system performace but avoids cases when the system uses

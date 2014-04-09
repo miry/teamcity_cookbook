@@ -18,4 +18,14 @@
 #
 #
 
-include_recipe 'teamcity::java'
+
+remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']['name']+'.war') do
+  backup false
+  mode 00644
+  # source node['teamcity']['server']['archive_url']
+  owner node['tomcat']['user']
+  group node['tomcat']['group']
+
+  source 'http://download.jetbrains.com/teamcity/eap/TeamCity-29848.war'
+  action :create_if_missing
+end

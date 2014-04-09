@@ -1,7 +1,8 @@
 default['teamcity']['server']['version'] = '8.1'
 default['teamcity']['server']['archive_name'] = "TeamCity-#{node['teamcity']['server']['version']}.war"
-default['teamcity']['server']['archive_url'] = "http://download.jetbrains.com/teamcity/#{node['teamcity']['server']['archive_name']}"
+default['teamcity']['server']['archive_url'] = "http://download.jetbrains.com/teamcity/eap/#{node['teamcity']['server']['archive_name']}"
 default['teamcity']['server']['data_dir'] = "/root/.BuildServer"
+default['teamcity']['server']['name'] = "teamcity"
 
 # http://jdbc.postgresql.org/download.html
 default['teamcity']['server']['jdbc']['driver'] = "postgresql"
@@ -11,11 +12,12 @@ default['teamcity']['server']['jdbc']['driver_path'] = "#{node['teamcity']['serv
 default['teamcity']['server']['jdbc']['driver_url'] = "http://jdbc.postgresql.org/download/#{node['teamcity']['server']['jdbc']['driver_filename']}"
 
 
-default['teamcity']['server']['jdbc']['user'] = 'teamcity'
-default['teamcity']['server']['jdbc']['password'] = 'teamcity'
+default['teamcity']['server']['jdbc']['user']     = node['teamcity']['server']['name']
+default['teamcity']['server']['jdbc']['password'] = node['teamcity']['server']['name']
 # default['teamcity']['server']['jdbc']['database'] = 'teamcity'
 # default['teamcity']['server']['jdbc']['port'] = '5432'
 # default['teamcity']['server']['jdbc']['host'] = 'localhost'
-default['teamcity']['server']['jdbc']['url'] = "jdbc:postgresql://localhost:5432/teamcity"
+default['teamcity']['server']['jdbc']['url']      = "jdbc:postgresql://localhost:5432/#{node['teamcity']['server']['name']}"
+default['teamcity']['server']['jdbc']['max_connections'] = 50
 
 
