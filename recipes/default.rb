@@ -18,4 +18,4 @@
 #
 #
 
-include_recipe 'teamcity::java'
+include_recipe 'teamcity::tomcat'

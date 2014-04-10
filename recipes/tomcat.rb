@@ -18,7 +18,6 @@
 #
 #
 
-
 remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']['name']+'.war') do
   backup false
   mode 00644
