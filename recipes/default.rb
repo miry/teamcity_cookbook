@@ -18,4 +18,5 @@
 #
 #
 
+include_recipe 'teamcity::data_dir'
 include_recipe 'teamcity::tomcat'

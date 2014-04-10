@@ -18,6 +18,8 @@
 #
 #
 
+
+
 remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']['name']+'.war') do
   backup false
   mode 00644
@@ -26,3 +28,38 @@ remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']
   source node['teamcity']['server']['archive_url']
   action :create_if_missing
 end
+
+
+# remote_file ::File.join(node['teamcity']['data_path'], node['teamcity']['server']['archive_name']) do
+#   backup false
+#   mode 00644
+#   owner node['tomcat']['user']
+#   group node['tomcat']['group']
+#   source node['teamcity']['server']['archive_url']
+#   action :create_if_missing
+# end
+
+#
+#
+# application node['teamcity']['server']['name'] do
+#   path         ::File.join(node['teamcity']['data_path'], node['teamcity']['server']['name'])
+#   repository   ::File.join(node['teamcity']['data_path'], node['teamcity']['server']['archive_name'])
+#   revision     'HEAD'
+#   scm_provider Chef::Provider::File::Deploy
+#
+#   java_webapp
+#
+#   tomcat
+# end
+
+
+# application node['teamcity']['server']['name'] do
+#   path         ::File.join(node['teamcity']['data_path'], node['teamcity']['server']['name'])
+#   repository   node['teamcity']['server']['archive_url']
+#   revision     '...'
+#   scm_provider Chef::Provider::RemoteFile::Deploy
+#
+#   java_webapp
+#
+#   tomcat
+# end
