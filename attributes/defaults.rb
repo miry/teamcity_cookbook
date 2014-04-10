@@ -21,4 +21,4 @@ default['teamcity']['server']['jdbc']['password'] = node['teamcity']['server']['
 default['teamcity']['server']['jdbc']['url']      = "jdbc:postgresql://localhost:5432/#{node['teamcity']['server']['name']}"
 default['teamcity']['server']['jdbc']['max_connections'] = 50
 
-
+default['tomcat']['java_options'] = default['tomcat']['java_options'] + " -Dteamcity_logs=#{node['tomcat']['log_dir']} -Dteamcity.data.path=#{node['teamcity']['server']['data_dir']}"
