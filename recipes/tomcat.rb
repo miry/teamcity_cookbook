@@ -20,7 +20,7 @@
 
 
 
-remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']['name']+'.war') do
+remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']['path']+'.war') do
   backup false
   mode 00644
   owner node['tomcat']['user']
