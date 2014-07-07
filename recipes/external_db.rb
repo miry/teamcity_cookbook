@@ -9,4 +9,6 @@ data_config_directory = "#{node['teamcity']['server']['data_dir']}/config"
 
 template "#{data_config_directory}/database.properties" do
   source "database.properties.erb"
+  user node['tomcat']['user']
+  group node['tomcat']['group']
 end
