@@ -1,6 +1,6 @@
 default['teamcity']['server']['name'] = "teamcity"
 default['teamcity']['server']['path'] = node['teamcity']['server']['name']
-default['teamcity']['server']['version'] = '8.1.2'
+default['teamcity']['server']['version'] = '9.0'
 default['teamcity']['server']['archive_name'] = "TeamCity-#{node['teamcity']['server']['version']}.war"
 # 'http://download.jetbrains.com/teamcity/eap/TeamCity-29848.war'
 default['teamcity']['server']['archive_url'] = "http://download.jetbrains.com/teamcity/#{node['teamcity']['server']['archive_name']}"
