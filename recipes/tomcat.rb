@@ -25,7 +25,7 @@ remote_file ::File.join(node['tomcat']['webapp_dir'], node['teamcity']['server']
   group node['tomcat']['group']
   source node['teamcity']['server']['archive_url']
   #action :create_if_missing
-  checksum node['tomcat']['checksum']
+  checksum node['teamcity']['server']['checksum']
   use_conditional_get true
   use_etag true
   use_last_modified true
